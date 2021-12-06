@@ -11,65 +11,65 @@ public class MusicMain {
 	public static void main(String[] args) {
 		// View
 		Scanner sc = new Scanner(System.in);
-		MP3Player mp3 = new MP3Player(); // À½¾ÇÀ» ½ÇÁúÀûÀ¸·Î Àç»ı½ÃÄÑÁÙ °´Ã¼
+		MP3Player mp3 = new MP3Player(); // ìŒì•…ì„ ì‹¤ì§ˆì ìœ¼ë¡œ ì¬ìƒì‹œì¼œì¤„ ê°ì²´
 
-		// À½¾Ç ¸®½ºÆ®°¡ µÉ ArrayList »ı¼º
+		// ìŒì•… ë¦¬ìŠ¤íŠ¸ê°€ ë  ArrayList ìƒì„±
 //		ArrayList<Music> musicList = new ArrayList<Music>();
-//		musicList.add(new Music("±ø", "Rain", 100, "C://music/Rain - ±ø.mp3"));
+//		musicList.add(new Music("ê¹¡", "Rain", 100, "C://music/Rain - ê¹¡.mp3"));
 //		musicList.add(new Music("Dalla Dalla", "Itzy", 120, "C://music/Itzy - Dalla Dalla.mp3"));
 //		musicList.add(new Music("Solo", "Jennie", 200, "C://music/JENNIE - SOLO.mp3"));
 
-		// index µµ ÀÔ·Â¹Ş¾Æµµ µÉµí
-//		int index = 0; // ÇöÀç À§Ä¡ Á¤º¸
+		// index ë„ ì…ë ¥ë°›ì•„ë„ ë ë“¯
+//		int index = 0; // í˜„ì¬ ìœ„ì¹˜ ì •ë³´
 
-		// ±â´ÉÀ» ´ã´çÇÏ´Â °´Ã¼ »ı¼º
+		// ê¸°ëŠ¥ì„ ë‹´ë‹¹í•˜ëŠ” ê°ì²´ ìƒì„±
 		MusicPlayer player = new MusicPlayer();
 
 		while (true) {
-			System.out.print("1. Àç»ı 2. Á¤Áö 3. ´ÙÀ½°î 4. ÀÌÀü°î 5. Á¾·á >> ");
+			System.out.print("1. ì¬ìƒ 2. ì •ì§€ 3. ë‹¤ìŒê³¡ 4. ì´ì „ê³¡ 5. ì¢…ë£Œ >> ");
 			int menu = sc.nextInt();
 
 			if (menu == 1) {
-				// Àç»ı -> ±ø, Rain, 1ºĞ 40ÃÊ
+				// ì¬ìƒ -> ê¹¡, Rain, 1ë¶„ 40ì´ˆ
 
 				presentSing(player.musicList, player.index);
-				// isplaying() -> ÇöÀç Àç»ıÁßÀÎÁö ÆÇ´ÜÇÏ´Â ¸Ş¼Òµå
-				// stop() -> ÇöÀç Àç»ı ÁßÀÎ ³ë·¡¸¦ ¸ØÃçÁÖ´Â ¸Ş¼Òµå
-				// Àç»ı ¸Ş¼Òµå play(°æ·Î)
+				// isplaying() -> í˜„ì¬ ì¬ìƒì¤‘ì¸ì§€ íŒë‹¨í•˜ëŠ” ë©”ì†Œë“œ
+				// stop() -> í˜„ì¬ ì¬ìƒ ì¤‘ì¸ ë…¸ë˜ë¥¼ ë©ˆì¶°ì£¼ëŠ” ë©”ì†Œë“œ
+				// ì¬ìƒ ë©”ì†Œë“œ play(ê²½ë¡œ)
 				// mp3.play(musicList.get(index).getPath());
-				// Controller ºÒ·¯¿Í¼­ ½ÇÇà½ÃÅ°±â
+				// Controller ë¶ˆëŸ¬ì™€ì„œ ì‹¤í–‰ì‹œí‚¤ê¸°
 				player.play();
 			} else if (menu == 2) {
 				player.mp3.stop();
-				System.out.println("À½¾ÇÀ» Á¤ÁöÇÕ´Ï´Ù");
+				System.out.println("ìŒì•…ì„ ì •ì§€í•©ë‹ˆë‹¤");
 			} else if (menu == 3) {
 //				if (mp3.isPlaying()) {
 //					mp3.stop();
 //				}
-				// SOLO ÀÌÈÄ·Î ´ÙÀ½°î ´©¸£¸é Àç»ıÇÒ °îÀÌ ¾ø½À´Ï´Ù Ãâ·Â ( ¼±»ı´Ô ¹æ¹ı )
+				// SOLO ì´í›„ë¡œ ë‹¤ìŒê³¡ ëˆ„ë¥´ë©´ ì¬ìƒí•  ê³¡ì´ ì—†ìŠµë‹ˆë‹¤ ì¶œë ¥ ( ì„ ìƒë‹˜ ë°©ë²• )
 //				if (player.index < player.musicList.size() - 1) {
 //					player.index++;
 //					mp3.play(player.musicList.get(player.index).getPath());
 //				} else {
-//					System.out.println("´ÙÀ½°îÀÌ ¾ø½À´Ï´Ù.");
+//					System.out.println("ë‹¤ìŒê³¡ì´ ì—†ìŠµë‹ˆë‹¤.");
 //					player.index = player.musicList.size() - 1;
 //				}
 				int cnt = player.nextPlay();
-				// index °¡ 2¸¦ ³Ñ´Â´Ù¸é show()¸¦ ½ÇÇà½ÃÅ°Áö ¸»¾ÆÁÖ¼¼¿ä
+				// index ê°€ 2ë¥¼ ë„˜ëŠ”ë‹¤ë©´ show()ë¥¼ ì‹¤í–‰ì‹œí‚¤ì§€ ë§ì•„ì£¼ì„¸ìš”
 				if (cnt == 0) {
 					presentSing(player.musicList, player.index);
 				} else {
-					System.out.println("Àç»ıÇÒ ³ë·¡°¡ ¾ø½À´Ï´Ù.");
+					System.out.println("ì¬ìƒí•  ë…¸ë˜ê°€ ì—†ìŠµë‹ˆë‹¤.");
 				}
 
 			} else if (menu == 4) {
 //				if (mp3.isPlaying()) {
 //					mp3.stop();
 //				}
-//				// '±ø' ¿¡¼­ ÀÌÀü°îÀ» ´©¸£¸é ÀÌÀü°îÀÌ ¾ø½À´Ï´Ù Ãâ·Â ( ³» ¹æ¹ı )
+//				// 'ê¹¡' ì—ì„œ ì´ì „ê³¡ì„ ëˆ„ë¥´ë©´ ì´ì „ê³¡ì´ ì—†ìŠµë‹ˆë‹¤ ì¶œë ¥ ( ë‚´ ë°©ë²• )
 //				player.index--;
 //				if (player.index < 0) {
-//					System.out.println("ÀÌÀü°îÀÌ ¾ø½À´Ï´Ù.");
+//					System.out.println("ì´ì „ê³¡ì´ ì—†ìŠµë‹ˆë‹¤.");
 //					player.index = 0;
 //				} else {
 //					presentSing(player.musicList, player.index);
@@ -79,30 +79,33 @@ public class MusicMain {
 				if(cnt == 0) {
 					presentSing(player.musicList, player.index);
 				} else {
-					System.out.println("Àç»ıÇÒ ³ë·¡°¡ ¾ø½À´Ï´Ù.");
+					System.out.println("ì¬ìƒí•  ë…¸ë˜ê°€ ì—†ìŠµë‹ˆë‹¤.");
 				}
 			} else if (menu == 5) {
-				System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+				System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 				mp3.stop();
 				break;
 			} else {
-				System.out.println("´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä");
+				System.out.println("ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”");
 			}
 
 		}
 
 	}
 
-	// ÇöÀç°î Ãâ·Â < ºí·Ï ÁöÁ¤ ÈÄ ¿À¸¥ÂÊ ¸¶¿ì½º Refactor -> extract Method >
+	// í˜„ì¬ê³¡ ì¶œë ¥ < ë¸”ë¡ ì§€ì • í›„ ì˜¤ë¥¸ìª½ ë§ˆìš°ìŠ¤ Refactor -> extract Method >
+	// MP3ê¹Œì§€ í¬í•¨í•˜ì—¬ í•˜ê³ ì‹¶ì€ ê²½ìš° ì£¼ì„ì²˜ë¦¬í•œê±° í•¨ê»˜ ì²˜ë¦¬í•˜ë©´ë¨
+	// -> ì´ ê²½ìš°ì— playerìª½ë„ ë³€ê²½ í•„ìš”
 	public static void presentSing(ArrayList<Music> musicList, int musicNumber/* , MP3Player mp3 */) {
 		System.out.print(musicList.get(musicNumber).getMusicName() + ", ");
 		System.out.print(musicList.get(musicNumber).getSinger() + ", ");
 		if (musicList.get(musicNumber).getPlayTime() % 60 == 0) {
-			System.out.println((musicList.get(musicNumber).getPlayTime() / 60) + "ºĞ ");
+			System.out.println((musicList.get(musicNumber).getPlayTime() / 60) + "ë¶„ ");
 		} else {
-			System.out.println((musicList.get(musicNumber).getPlayTime() / 60) + "ºĞ "
-					+ (musicList.get(musicNumber).getPlayTime() % 60) + "ÃÊ");
+			System.out.println((musicList.get(musicNumber).getPlayTime() / 60) + "ë¶„ "
+					+ (musicList.get(musicNumber).getPlayTime() % 60) + "ì´ˆ");
 		}
 		// mp3.play(musicList.get(musicNumber).getPath());
 	}
+	
 }
