@@ -1,44 +1,45 @@
 package music;
 
-import »ó¼Ó01.Folder;
-import »ó¼Ó01.Tell;
+import ìƒì†01.Folder;
+import ìƒì†01.Tell;
 
 public class Inheritance {
 
 	public static void main(String[] args) {
-		// »ó¼Ó(Inheritance)
-		// ±âÁ¸ Å¬·¡½º(ºÎ¸ğ)ÀÇ º¯¼ö¿Í ¸Ş¼Òµå¸¦ ¹°·Á¹Ş¾Æ »õ·Î¿î Å¬·¡½º(ÀÚ½Ä) ±¸¼º
+		// ìƒì†(Inheritance)
+		// ê¸°ì¡´ í´ë˜ìŠ¤(ë¶€ëª¨)ì˜ ë³€ìˆ˜ì™€ ë©”ì†Œë“œë¥¼ ë¬¼ë ¤ë°›ì•„ ìƒˆë¡œìš´ í´ë˜ìŠ¤(ìì‹) êµ¬ì„±
 		
-//		// »óÀ§(ºÎ¸ğ) Å¬·¡½º
+//		// ìƒìœ„(ë¶€ëª¨) í´ë˜ìŠ¤
 //		public void Call() {
-//			System.out.println("ÀüÈ­¸¦ °É´Ù");
+//			System.out.println("ì „í™”ë¥¼ ê±¸ë‹¤");
 //		}
 //		public void CallSend() {
-//			System.out.println("ÀüÈ­¸¦ ¹Ş´Ù");
+//			System.out.println("ì „í™”ë¥¼ ë°›ë‹¤");
 //		}
 //		public void ButtonClick() {
-//			System.out.println("¹öÆ°À» µ¹·Á¼­ ¼±ÅÃÇÏ´Ù");
+//			System.out.println("ë²„íŠ¼ì„ ëŒë ¤ì„œ ì„ íƒí•˜ë‹¤");
 //		}
 //
-//		// »ó¼Ó¹ŞÀ» ÇÏÀ§ Å¬·¡½º
+//		// ìƒì†ë°›ì„ í•˜ìœ„ í´ë˜ìŠ¤
 //		
-//		// È®Àå -> ÇÊ¿äÇÑ ±â´É¸¸ Ãß°¡·Î °³¹ß
+//		// í™•ì¥ -> í•„ìš”í•œ ê¸°ëŠ¥ë§Œ ì¶”ê°€ë¡œ ê°œë°œ
 //		public void Camera() {
-//			System.out.println("»çÁøÀ» Âï´Ù");
+//			System.out.println("ì‚¬ì§„ì„ ì°ë‹¤");
 //		}
-//		// ¿À¹ö¶óÀÌµù -> ÀçÁ¤ÀÇ
-//		@Override // ¾î³ëÅ×ÀÌ¼Ç ÂüÁ¶
+//		// ì˜¤ë²„ë¼ì´ë”© -> ì¬ì •ì˜
+//		@Override // ì–´ë…¸í…Œì´ì…˜ ì°¸ì¡°
 //		public void ButtonClick() {
-//			System.out.println("¶È ¶È ¶È ¹öÆ°À» Å¬¸¯ÇÕ´Ï´Ù");
+//			System.out.println("ë˜‘ ë˜‘ ë˜‘ ë²„íŠ¼ì„ í´ë¦­í•©ë‹ˆë‹¤");
 //		}
-//// ¸ŞÀÎ
+//// ë©”ì¸
 //		public static void main(String[] args) {
 //			
 //			Tell tell = new Tell();
 //			tell.Call();
 //			tell.ButtonClick();
-//			// ºÎ¸ğ¿¡ ÀÖ´Â ±â´ÉÀ» ÀüºÎ »ó¼Ó ¹Ş¾Ò±â ¶§¹®¿¡
-//			// ÀÛ¼ºÇØÁÖÁö ¾Ê¾Æµµ ±â´É »ç¿ëÀÌ °¡´ÉÇÏ´Ù
+//		
+//			// ë¶€ëª¨ì— ìˆëŠ” ê¸°ëŠ¥ì„ ì „ë¶€ ìƒì† ë°›ì•˜ê¸° ë•Œë¬¸ì—
+//			// ì‘ì„±í•´ì£¼ì§€ ì•Šì•„ë„ ê¸°ëŠ¥ ì‚¬ìš©ì´ ê°€ëŠ¥í•˜ë‹¤
 //			Folder folder = new Folder();
 //			folder.Call();
 //			folder.Camera();
