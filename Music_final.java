@@ -14,7 +14,7 @@ public class Music_final {
 		MusicPlayer player = new MusicPlayer();
 
 		while (true) {
-			System.out.println("1. Àç»ı 2. Á¤Áö 3. ´ÙÀ½°î 4. ÀÌÀü°î 5. Á¾·á >> ");
+			System.out.println("1. ì¬ìƒ 2. ì •ì§€ 3. ë‹¤ìŒê³¡ 4. ì´ì „ê³¡ 5. ì¢…ë£Œ >> ");
 			int menu = sc.nextInt();
 
 			if (menu == 1) {
@@ -22,30 +22,30 @@ public class Music_final {
 				player.play();
 			} else if (menu == 2) {
 				player.mp3.stop();
-				System.out.println("À½¾ÇÀ» Á¤ÁöÇÕ´Ï´Ù");
+				System.out.println("ìŒì•…ì„ ì •ì§€í•©ë‹ˆë‹¤");
 			} else if (menu == 3) {
 				int cnt = player.nextPlay();
 				if (cnt == 0) {
 					presentSing(player.musicList, player.index);
 				} else {
-					System.out.println("Àç»ıÇÒ ³ë·¡°¡ ¾ø½À´Ï´Ù.");
+					System.out.println("ì¬ìƒí•  ë…¸ë˜ê°€ ì—†ìŠµë‹ˆë‹¤.");
 				}
 			} else if (menu == 4) {
 				int cnt = player.beforePlay();
 				if (cnt == 0) {
 					presentSing(player.musicList, player.index);
 				} else {
-					System.out.println("Àç»ıÇÒ ³ë·¡°¡ ¾ø½À´Ï´Ù.");
+					System.out.println("ì¬ìƒí•  ë…¸ë˜ê°€ ì—†ìŠµë‹ˆë‹¤.");
 				}
 			} else if (menu == 5) {
-				System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+				System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 				mp3.stop();
 				break;
 			} else {
-				System.out.println("´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä");
+				System.out.println("ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”");
 			}
 
-		}
+		} 
 
 	}
 
@@ -53,10 +53,10 @@ public class Music_final {
 		System.out.print(musicList.get(musicNumber).getMusicName() + ", ");
 		System.out.print(musicList.get(musicNumber).getSinger() + ", ");
 		if (musicList.get(musicNumber).getPlayTime() % 60 == 0) {
-			System.out.println((musicList.get(musicNumber).getPlayTime() / 60) + "ºĞ ");
+			System.out.println((musicList.get(musicNumber).getPlayTime() / 60) + "ë¶„ ");
 		} else {
-			System.out.println((musicList.get(musicNumber).getPlayTime() / 60) + "ºĞ "
-					+ (musicList.get(musicNumber).getPlayTime() % 60) + "ÃÊ");
+			System.out.println((musicList.get(musicNumber).getPlayTime() / 60) + "ë¶„ "
+					+ (musicList.get(musicNumber).getPlayTime() % 60) + "ì´ˆ");
 		}
 	}
 
